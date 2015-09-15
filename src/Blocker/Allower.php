@@ -1,6 +1,6 @@
 <?php
 
-namespace Dafiti\Blocker;
+namespace app\Blocker;
 
 use Symfony\Component\HttpFoundation;
 

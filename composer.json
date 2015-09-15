@@ -1,32 +1,31 @@
 {
-    "name": "dafiti/blocker",
-    "description": "External Call Blocker ",
-    "keywords": ["http"],
+    "name": "lcfumes/external-call-blocker",
+    "description": "External Call Blocker",
+    "keywords": ["http", "ajax", "post", "get", "blocker", "domain"],
     "type": "library",
+    "license": "MIT",
     "authors": [
-        {
-          "name": "Pedro Ribeiro da Silva Neto",
-          "email": "pedro.neto@dafiti.com.br",
+       {
+          "name": "Luiz Fumes",
+          "email": "lcfumes@gmail.com",
           "role": "Developer"
-        }
+       }
     ],
     "require": {
         "symfony/http-foundation": "2.7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "4.5.*",
-        "phploc/phploc": "2.1.*",
         "sebastian/phpcpd": "2.0.*",
         "pdepend/pdepend" : "2.0.*",
         "phpmd/phpmd" : "2.2.*",
         "squizlabs/php_codesniffer": "2.3.*",
         "phpdocumentor/phpdocumentor": "2.8.*",
-        "mayflower/php-codebrowser": "1.1.*",
-        "fabpot/php-cs-fixer": "^1.10"
+        "mayflower/php-codebrowser": "1.1.*"
     },
     "autoload": {
         "psr-4": {
-            "Dafiti\\Blocker\\": "src/Blocker/"
+            "app\\Blocker\\": "src/Blocker/"
         }
     }
 }

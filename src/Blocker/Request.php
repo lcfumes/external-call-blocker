@@ -1,10 +1,10 @@
 <?php
 
-namespace Dafiti\Blocker;
+namespace app\Blocker;
 
 use Symfony\Component\HttpFoundation;
 
-class Request implements Allower
+class Request implements Allower, Blocker
 {
     /**
      * @var array
@@ -46,7 +46,7 @@ class Request implements Allower
     /**
      * @return HttpFoundation\Response
      */
-    public function sendBlockedResponse()
+    public function block()
     {
         $response = new HttpFoundation\Response();
         $response->setStatusCode(HttpFoundation\Response::HTTP_PRECONDITION_FAILED);
