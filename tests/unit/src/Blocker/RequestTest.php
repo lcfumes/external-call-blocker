@@ -1,6 +1,5 @@
 <?php
 
-
 class RequestTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -57,6 +56,15 @@ class RequestTest extends \PHPUnit_Framework_TestCase
     {
         $domains = [".fumes.com.br", ".pedalize.com.br"];
         $_SERVER["HTTP_REFERER"] = "http://www.anotherdomain.com.br/contact";
+        $blocker = new \app\Blocker\Request($domains);
+        $result = $blocker->block();
+        $expected = \Symfony\Component\HttpFoundation\Response::HTTP_PRECONDITION_FAILED;
+        $this->assertEquals($expected, $result->getStatusCode());
+    }
+
+    public function testSendBlockedResponseWithoutHttpReferer()
+    {
+        $domains = [".fumes.com.br", ".pedalize.com.br"];
         $blocker = new \app\Blocker\Request($domains);
         $result = $blocker->block();
         $expected = \Symfony\Component\HttpFoundation\Response::HTTP_PRECONDITION_FAILED;
